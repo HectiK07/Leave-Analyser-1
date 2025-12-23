@@ -1,0 +1,41 @@
+<parameter name="content"># Leave & Productivity Analyzer - Implementation Plan
+
+## Phase 1: Database Setup & Dependencies
+- [ ] Install Tailwind CSS 4.x and additional dependencies
+- [ ] Configure Prisma for MongoDB connection
+- [ ] Design database schema (Employee, Attendance, MonthlyReport models)
+- [ ] Generate Prisma client
+
+## Phase 2: Backend API Development
+- [ ] Create API route for Excel file upload (/api/upload)
+- [ ] Create API route for dashboard data (/api/dashboard)
+- [ ] Create API route for monthly analysis (/api/monthly/:month)
+- [ ] Implement Excel parsing logic with business rules
+- [ ] Implement attendance calculation and leave tracking
+
+## Phase 3: UI Enhancement
+- [ ] Update layout.tsx with Tailwind CSS and dark mode
+- [ ] Redesign dashboard with modern components
+- [ ] Add month selector component
+- [ ] Create enhanced stats cards with animations
+- [ ] Improve table design with better UX
+- [ ] Add file upload with drag & drop
+
+## Phase 4: Business Logic Implementation
+- [ ] Working hours calculation (Mon-Fri: 8.5h, Sat: 4h, Sun: 0h)
+- [ ] Leave tracking (2 leaves per month max)
+- [ ] Productivity calculation (actual/expected × 100)
+- [ ] Monthly report generation
+- [ ] Employee data management
+
+## Phase 5: Testing & Deployment
+- [ ] Test all API endpoints
+- [ ] Test Excel file upload and processing
+- [ ] Test dashboard functionality
+- [ ] Deploy to Vercel
+- [ ] Create sample Excel file for testing
+- [ ] Update README with setup instructions
+
+## Current Status: Starting Phase 1
+Next: Install Tailwind CSS 4.x and configure dependencies
+</parameter>

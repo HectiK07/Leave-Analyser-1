@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/anu/Desktop/task/src/app/globals.css"],"sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base {\n  * {\n    @apply border-border;\n  }\n  \n  body {\n    @apply bg-background text-foreground;\n    font-feature-settings: \"rlig\" 1, \"calt\" 1;\n  }\n}\n\n@layer components {\n  .card-gradient {\n    @apply bg-gradient-to-br from-zinc-900/80 to-zinc-800/80 backdrop-blur-sm;\n  }\n  \n  .glass-effect {\n    @apply bg-zinc-900/80 backdrop-blur-sm border border-zinc-700/50;\n  }\n  \n  .status-badge {\n    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;\n  }\n}\n"],"names":[],"mappings":"AAAA;;AACA;;AACA;;AAEA;EAEI;;EAIA;;EACsB;;;;;AAI1B;EAEI;;EAIA;;EAIA","debugId":null}}]
+}

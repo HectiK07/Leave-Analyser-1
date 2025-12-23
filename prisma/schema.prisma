@@ -1,0 +1,129 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model Employee {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String   @unique
+  department   String
+  position     String?
+  joinDate     DateTime @default(now())
+  status       EmployeeStatus @default(ACTIVE)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  timeEntries   TimeEntry[]
+  leaveRequests LeaveRequest[]
+
+  @@map("employees")
+}
+
+model TimeEntry {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  employeeId String   @db.ObjectId
+  date       DateTime
+  inTime     String?
+  outTime    String?
+  breakTime  Int?     @default(0) // in minutes
+  workHours  Float    @default(0)
+  status     EntryStatus @default(PRESENT)
+  notes      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  employee   Employee @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@map("time_entries")
+}
+
+model LeaveRequest {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  employeeId  String      @db.ObjectId
+  startDate   DateTime
+  endDate     DateTime
+  leaveType   LeaveType
+  reason      String?
+  status      LeaveStatus @default(PENDING)
+  approvedBy  String?
+  approvedAt  DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  // Relations
+  employee    Employee    @relation(fields: [employeeId], references: [id], onDelete: Cascade)
+
+  @@map("leave_requests")
+}
+
+model MonthlyReport {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  month        Int
+  year         Int
+  totalDays    Int
+  workingDays  Int
+  totalHours   Float
+  averageHours Float
+  productivity Float
+  leaveCount   Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([month, year])
+  @@map("monthly_reports")
+}
+
+// Legacy Attendance model for backward compatibility
+model Attendance {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  employeeName  String
+  date          DateTime
+  inTime        String?
+  outTime       String?
+  workedHours   Float
+  expectedHours Float
+  isLeave       Boolean  @default(false)
+  month         Int
+  year          Int
+}
+
+// Enums
+enum EmployeeStatus {
+  ACTIVE
+  INACTIVE
+  TERMINATED
+}
+
+enum EntryStatus {
+  PRESENT
+  ABSENT
+  HALF_DAY
+  HOLIDAY
+  WEEKEND
+}
+
+enum LeaveType {
+  ANNUAL
+  SICK
+  EMERGENCY
+  MATERNITY
+  PATERNITY
+  UNPAID
+}
+
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}

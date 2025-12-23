@@ -1,0 +1,1 @@
+<parameter name="content">{"version": 2, "buildCommand": "npm run build", "outputDirectory": ".next", "installCommand": "npm install", "framework": "nextjs", "env": {"DATABASE_URL": "@database-url", "NODE_ENV": "production"}, "build": {"env": {"DATABASE_URL": "@database-url"}}, "regions": ["iad1"], "functions": {"app/api/**/*.js": {"maxDuration": 10}}}</parameter>

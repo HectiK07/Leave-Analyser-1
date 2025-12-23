@@ -1,0 +1,26 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  @apply border-border;
+
+  @apply bg-background text-foreground;
+
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  @apply bg-gradient-to-br from-zinc-900 / 80 to-zinc-800 / 80 backdrop-blur-sm;
+
+  @apply bg-zinc-900 / 80 backdrop-blur-sm border border-zinc-700 / 50;
+
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+/*# sourceMappingURL=src_app_globals_91e4631d.css.map*/

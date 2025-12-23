@@ -1,0 +1,15 @@
+__turbopack_load_page_chunks__("/_error", [
+  "static/chunks/7e9fc_next_dist_compiled_f90d5ad3._.js",
+  "static/chunks/7e9fc_next_dist_shared_lib_dc97cd0a._.js",
+  "static/chunks/7e9fc_next_dist_client_7f67732a._.js",
+  "static/chunks/7e9fc_next_dist_2e1a5e33._.js",
+  "static/chunks/7e9fc_next_error_be68a809.js",
+  "static/chunks/[next]_entry_page-loader_ts_6c2891c9._.js",
+  "static/chunks/7e9fc_react_0a20dc2d._.js",
+  "static/chunks/7e9fc_react-dom_cjs_react-dom_development_cd609049.js",
+  "static/chunks/7e9fc_react-dom_2d1a9840._.js",
+  "static/chunks/7e9fc_629c7880._.js",
+  "static/chunks/[root-of-the-server]__d463fe7f._.js",
+  "static/chunks/Downloads_task_pages__error_2da965e7._.js",
+  "static/chunks/turbopack-Downloads_task_pages__error_a7e81f82._.js"
+])

@@ -1,6 +1,6 @@
-[00:00:01.363] Server  LOG      ✓ Ready in 876ms
-[00:00:04.408] Server  LOG      ○ Compiling / ...
-[00:00:06.198] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:01.260] Server  LOG      ✓ Ready in 802ms
+[00:00:07.595] Server  LOG      ○ Compiling / ...
+[00:00:08.830] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -23,7 +23,7 @@ It can also happen if the client has a browser extension installed which messes 
                 <RedirectErrorBoundary router={{...}}>
                   <Head>
                   <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="/Downloads...">
+                    <SegmentViewNode type="layout" pagePath="/OneDrive/...">
                       <SegmentTrieNode>
                       <link>
                       <script>
